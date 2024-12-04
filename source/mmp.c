@@ -14,16 +14,15 @@
 #endif
 
 #include "config.h"
+#include <time/time.h>
 
 #ifdef XENON
-void sleep(int i){
+void __wrap_sleep(int i){
   delay(i);
 }
-#else
-#if HAVE_UNISTD_H
+#endif
+
 #include <unistd.h>
-#endif
-#endif
 #include <sys/time.h>
 
 #include <sys/types.h>
