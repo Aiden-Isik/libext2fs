@@ -20,7 +20,7 @@ LIBDIR		:=	../lib
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-CFLAGS		=	-O2 -Wall -Wno-unused -Wl,--wrap=sleep $(MACHDEP) $(INCLUDE) -DXENON -DWORDS_BIGENDIAN -U__linux__
+CFLAGS		=	-O2 -Wall -Wno-unused -fcommon -Wl,--wrap=sleep $(MACHDEP) $(INCLUDE) -DXENON -DWORDS_BIGENDIAN -U__linux__
 CXXFLAGS	=	$(CFLAGS)
 ASFLAGS		:=	-g
 export EXT2BIN	:=	$(LIBDIR)/$(PLATFORM)/libext2fs.a
